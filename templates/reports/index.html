@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block page_title %}Reports &amp; Export{% endblock %}
+{% block content %}
+<div class="card">
+  <div class="card-header">Export Data (CSV / PDF)</div>
+  <div class="card-body">
+    <p class="text-muted">Choose what to export, an optional date range, and a format. The file downloads immediately.</p>
+    <form method="get" action="{% url 'reports:export' %}" class="row g-3 align-items-end">
+      <div class="col-md-3">
+        <label class="form-label">Report Type</label>
+        <select class="form-select" name="type" required>
+          {% for key, label in report_types.items %}
+            <option value="{{ key }}">{{ label }}</option>
+          {% endfor %}
+        </select>
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">Start Date</label>
+        <input type="date" class="form-control" name="start_date">
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">End Date</label>
+        <input type="date" class="form-control" name="end_date">
+      </div>
+      <div class="col-md-3">
+        <label class="form-label">Format</label>
+        <select class="form-select" name="format">
+          <option value="csv">CSV</option>
+          <option value="pdf">PDF</option>
+        </select>
+      </div>
+      <div class="col-12">
+        <button class="btn btn-gold" type="submit"><i class="fa-solid fa-file-export"></i> Download Report</button>
+        <small class="text-muted ms-2">Leave dates blank to export all records.</small>
+      </div>
+    </form>
+  </div>
+</div>
+{% endblock %}

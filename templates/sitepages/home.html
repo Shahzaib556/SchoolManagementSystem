@@ -1,0 +1,82 @@
+{% extends "sitepages/base_public.html" %}
+{% block title %}Home | Roshan Hunar Markaz{% endblock %}
+{% block content %}
+
+<section class="hero text-center">
+  <div class="container">
+    <h1 class="display-5">Welcome to Roshan Hunar Markaz</h1>
+    <p class="lead opacity-75 mb-4">Empowering students with knowledge, character, and future-ready skills.</p>
+    <a href="{% url 'sitepages:about' %}" class="btn btn-gold btn-lg me-2">Learn More</a>
+    <a href="{% url 'accounts:login' %}" class="btn btn-outline-light btn-lg">Portal Login</a>
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="row text-center g-4">
+    <div class="col-6 col-md-3">
+      <h2 class="section-title mb-0">1200+</h2>
+      <p class="text-muted">Students Enrolled</p>
+    </div>
+    <div class="col-6 col-md-3">
+      <h2 class="section-title mb-0">80+</h2>
+      <p class="text-muted">Qualified Teachers</p>
+    </div>
+    <div class="col-6 col-md-3">
+      <h2 class="section-title mb-0">15+</h2>
+      <p class="text-muted">Years of Excellence</p>
+    </div>
+    <div class="col-6 col-md-3">
+      <h2 class="section-title mb-0">100%</h2>
+      <p class="text-muted">Digital Record Keeping</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light py-5">
+  <div class="container">
+    <h2 class="section-title text-center mb-5">What We Offer</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="fa-solid fa-chalkboard-user"></i>
+          <h5>Quality Teaching</h5>
+          <p class="text-muted mb-0">Experienced, qualified faculty delivering a modern, well-rounded curriculum.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="fa-solid fa-chart-line"></i>
+          <h5>Digital Progress Tracking</h5>
+          <p class="text-muted mb-0">Real-time attendance, exam results, and fee status available through our student and parent portal.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-card">
+          <i class="fa-solid fa-hand-holding-heart"></i>
+          <h5>Character Building</h5>
+          <p class="text-muted mb-0">Co-curricular activities, events, and mentorship that shape well-rounded individuals.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="container py-5">
+  <div class="row align-items-center g-4">
+    <div class="col-md-6">
+      <h2 class="section-title">One Portal, Every Role</h2>
+      <p class="text-muted">Every member of our school community gets exactly the access they need:</p>
+      <ul class="text-muted">
+        <li><strong>Admins &amp; Principal</strong> — full oversight of students, staff, academics, attendance and finances.</li>
+        <li><strong>Teachers</strong> — manage their own classes, mark attendance, and view their students.</li>
+        <li><strong>Students &amp; Parents</strong> — a secure, read-only view of attendance, fees, notices and events for their own record.</li>
+      </ul>
+      <a href="{% url 'accounts:login' %}" class="btn btn-navy">Go to Login</a>
+    </div>
+    <div class="col-md-6 text-center">
+      <i class="fa-solid fa-users-gear" style="font-size: 10rem; color: var(--gold);"></i>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

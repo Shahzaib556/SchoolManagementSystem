@@ -1,0 +1,68 @@
+{% extends "sitepages/base_public.html" %}
+{% block title %}About Us | Roshan Hunar Markaz{% endblock %}
+{% block content %}
+<section class="hero text-center py-4">
+  <div class="container"><h1 class="display-6">About Roshan Hunar Markaz</h1></div>
+</section>
+<section class="container py-5">
+  <div class="row g-5 align-items-center">
+    <div class="col-md-6">
+      <h2 class="section-title">Our Story</h2>
+      <p class="text-muted">Roshan Hunar Markaz was founded with a single mission: to give every student a well-rounded, modern education that builds both knowledge and character. From a small campus to a growing community of students, teachers and parents, our focus has always stayed the same — helping every learner reach their full potential.</p>
+      <h2 class="section-title mt-4">Our Mission</h2>
+      <p class="text-muted mb-0">To provide accessible, high-quality education supported by transparent, digital administration — so students, teachers and families always know exactly where things stand.</p>
+    </div>
+    <div class="col-md-6">
+      <div class="feature-card">
+        <h5 class="section-title">Our Values</h5>
+        <ul class="text-muted mb-0">
+          <li>Academic excellence for every student</li>
+          <li>Discipline, honesty and respect</li>
+          <li>Transparent communication with parents</li>
+          <li>Continuous improvement through technology</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="bg-light py-5">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-6">
+        <div class="card h-100"><div class="card-body">
+          <h5 class="section-title mb-3"><i class="fa-solid fa-address-card me-2"></i>Contact Details</h5>
+          <p class="text-muted mb-2"><i class="fa-solid fa-location-dot me-2 text-warning"></i>{{ site_settings.address }}</p>
+          <p class="text-muted mb-2"><i class="fa-solid fa-phone me-2 text-warning"></i>{{ site_settings.phone }}</p>
+          <p class="text-muted mb-2"><i class="fa-solid fa-envelope me-2 text-warning"></i>{{ site_settings.email }}</p>
+          {% if site_settings.whatsapp_number %}
+          <p class="text-muted mb-2"><i class="fa-brands fa-whatsapp me-2 text-warning"></i>{{ site_settings.whatsapp_number }}</p>
+          {% endif %}
+          {% if site_settings.facebook_url %}
+          <a href="{{ site_settings.facebook_url }}" target="_blank" rel="noopener" class="btn btn-navy btn-sm mt-2">
+            <i class="fa-brands fa-facebook me-1"></i> Follow us on Facebook
+          </a>
+          {% endif %}
+        </div></div>
+      </div>
+      <div class="col-md-6">
+        <div class="card h-100"><div class="card-body">
+          <h5 class="section-title mb-3"><i class="fa-solid fa-building-columns me-2"></i>Bank Details for Donations</h5>
+          {% if site_settings.bank_name or site_settings.account_number %}
+          <table class="table table-sm mb-0">
+            {% if site_settings.bank_name %}<tr><th>Bank</th><td>{{ site_settings.bank_name }}</td></tr>{% endif %}
+            {% if site_settings.account_title %}<tr><th>Account Title</th><td>{{ site_settings.account_title }}</td></tr>{% endif %}
+            {% if site_settings.account_number %}<tr><th>Account Number</th><td>{{ site_settings.account_number }}</td></tr>{% endif %}
+            {% if site_settings.iban %}<tr><th>IBAN</th><td>{{ site_settings.iban }}</td></tr>{% endif %}
+            {% if site_settings.branch_code %}<tr><th>Branch Code</th><td>{{ site_settings.branch_code }}</td></tr>{% endif %}
+          </table>
+          <p class="text-muted small mt-3 mb-0">Your Zakat, Sadqa, Sadqa-e-Fitar, Ushar or general donations directly support students' education. Jazak Allah Khair for your support.</p>
+          {% else %}
+          <p class="text-muted mb-0">Bank details will be published here soon. Please contact the school office directly to arrange a donation.</p>
+          {% endif %}
+        </div></div>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}
